@@ -24,7 +24,6 @@ def count_click_two():
 @app.route('/destroy_session')
 def destroy_session():
         session.clear()
-        
         return redirect('/')
 
 
