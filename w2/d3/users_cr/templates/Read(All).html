@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users Read(All)</title>
+</head>
+<body>
+    <table>
+        {% for user in users %}    
+        <tr>
+            <th scope ="row">{{user.id}}</th>
+            <th>{{user.first_name}}</th>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+        <div class = text-center>
+            <button class = "btn btn-primary btn-outline-info btn-lg" type = "submit" 
+            name = "process" id = "process"><a href = '/create/user'>Create User</a></button>
+        </div>
+</body>
+</html>

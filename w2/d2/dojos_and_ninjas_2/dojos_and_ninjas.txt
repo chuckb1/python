@@ -1,0 +1,17 @@
+INSERT INTO `dojos_and_ninjas_schema`.`dojos` (`id`, `name`) VALUES ('1', 'Dojo');
+INSERT INTO dojos_and_ninjas_schema.dojos(id, name) VALUES('2', 'Slapyomama');
+INSERT INTO dojos (id, name) VALUES ('3', 'Longbeard');
+DELETE FROM dojos WHERE (id > '0');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Mini', 'Fatso', '2', '1');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Nugget', 'Inspector', '3', '1');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Johnathan', 'JoeStar', '3', '1');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Connor', 'Conman', '10', '2');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Josh', 'Squintz', '12', '2');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Ayden', 'Thesuspicious', '13', '2');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Logan', 'Goonie', '16', '3');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Jeff', 'Davison', '20', '3');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ('Brodie', 'Manbun', '22', '3');
+SELECT * FROM ninjas WHERE dojo_id=(SELECT min(id) FROM dojos);
+SELECT * FROM ninjas WHERE dojo_id=(SELECT max(id) FROM dojos);
+SELECT * FROM dojos JOIN ninjas ON ninjas.dojo_id = dojos.id
+WHERE ninjas.id=(SELECT max(id) FROM ninjas);
